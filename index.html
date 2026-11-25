@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sol Chuva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    
+    <header class="header">
+      <div class="logo-wrapper">
+        <img id="app-logo" src="solchuva.svg" alt="Logo Sol Chuva" class="logo">
+      </div>
+      <div class="header-text">
+        <h1 id="app-title">Sol Chuva</h1>
+        <p id="app-subtitle">O tempo certo, onde você estiver</p>
+      </div>
+    </header>
+
+    
+    <section class="search-section">
+      <div class="search-bar">
+        <div class="input-wrapper">
+          <input 
+            type="text" 
+            id="city-input" 
+            list="cities-list" 
+            placeholder="Digite o nome de uma cidade..."
+            autocomplete="off"
+          >
+          <datalist id="cities-list">
+            <option value="Florianópolis">
+            <option value="São Paulo">
+            <option value="Rio de Janeiro">
+            <option value="Brasília">
+            <option value="Salvador">
+            <option value="Porto Alegre">
+          </datalist>
+        </div>
+        <button id="search-btn" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span>Buscar</span>
+        </button>
+      </div>
+
+      
+      <div id="feedback-box" class="feedback-msg hidden" role="alert"></div>
+    </section>
+
+    
+    <section class="chips-section" aria-label="Cidades sugeridas">
+      <button class="chip" data-city="Florianópolis">Florianópolis</button>
+      <button class="chip" data-city="São Paulo">São Paulo</button>
+      <button class="chip" data-city="Rio de Janeiro">Rio de Janeiro</button>
+      <button class="chip" data-city="Brasília">Brasília</button>
+      <button class="chip" data-city="Salvador">Salvador</button>
+      <button class="chip" data-city="Porto Alegre">Porto Alegre</button>
+      <section class="chips-section" aria-label="Cidades sugeridas">
+</section>
+    </section>
+
+    
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <span>Carregando dados do clima...</span>
+    </div>
+
+    
+    <main id="weather-content" class="hidden fade-in">
+      
+      <section class="current-weather-card">
+        <div class="current-header">
+          <div>
+            <h2 id="city-name">--</h2>
+            <p id="city-region">--</p>
+          </div>
+          <span id="last-updated" class="updated-badge">Atualizado às --:--</span>
+        </div>
+
+        <div class="current-body">
+          <div class="temp-main">
+            <div class="main-icon-box">
+              <img id="current-icon" src="" alt="Condição do tempo" class="weather-icon-img">
+            </div>
+            <div>
+              <span id="current-temp" class="temp-value">--°C</span>
+              <p id="current-desc" class="weather-desc">--</p>
+            </div>
+          </div>
+
+          <div class="indicators-grid">
+            <div class="indicator-box">
+              <span class="ind-label">🌡️ Sensação</span>
+              <strong id="apparent-temp" class="ind-value">--°C</strong>
+            </div>
+            <div class="indicator-box">
+              <span class="ind-label">💧 Umidade</span>
+              <strong id="humidity" class="ind-value">--%</strong>
+            </div>
+            <div class="indicator-box">
+              <span class="ind-label">💨 Vento</span>
+              <strong id="wind-speed" class="ind-value">-- km/h</strong>
+            </div>
+            <div class="indicator-box">
+              <span class="ind-label">☔ Precipitação</span>
+              <strong id="precipitation" class="ind-value">-- mm</strong>
+            </div>
+            <div class="indicator-box">
+              <span class="ind-label">☀️ Índice UV</span>
+              <strong id="uv-index" class="ind-value">--</strong>
+            </div>
+            <div class="indicator-box">
+              <span class="ind-label">🌅 Sol</span>
+              <strong id="sun-times" class="ind-value">--:-- / --:--</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="forecast-section">
+        <div class="section-header">
+          <h3>Previsão para os próximos 10 dias</h3>
+          <span class="section-hint">Máx / Mín e chance de chuva</span>
+        </div>
+        <div id="forecast-grid" class="forecast-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Sol Chuva • Dados de clima por <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> • Copyright 2024
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

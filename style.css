@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f4f5f7;
+  color: #333333;
+  padding: 24px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  background-color: #333333;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+#app-title {
+  color: #333333;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#app-subtitle {
+  color: #333333;
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+#city-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+#search-btn {
+  background-color: #483DAD;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 0 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#search-btn:hover {
+  opacity: 0.9;
+}
+
+
+.feedback-msg {
+  color: #FF0000;
+  background-color: #FFFFFF;
+  border: 1px solid #FF0000;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+
+.chips-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 24px;
+}
+
+.chip {
+  background-color: #FFFFFF;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  color: #333333;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: #483DAD;
+  color: #483DAD;
+}
+
+.loading {
+  text-align: center;
+  padding: 30px;
+  font-weight: 600;
+  color: #483DAD;
+}
+
+
+.current-weather-card {
+  background-color: #333333;
+  color: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.current-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.current-header h2 {
+  font-size: 1.4rem;
+}
+
+.current-header p, .updated-time {
+  color: #FFFFFF;
+  opacity: 0.75;
+  font-size: 0.8rem;
+}
+
+.current-body {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.temp-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.weather-icon-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.temp-value {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.weather-desc {
+  color: #FFFFFF;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.indicators-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.indicator-box {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+
+.forecast-section {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.forecast-section h3 {
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 16px;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.forecast-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 8px;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.forecast-card .day-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #333333;
+}
+
+.forecast-card .day-date {
+  color: #333333;
+  opacity: 0.6;
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+}
+
+.forecast-card .day-icon-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin: 6px auto;
+  display: block;
+}
+
+.forecast-card .day-desc {
+  font-size: 0.7rem;
+  color: #333333;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+
+.forecast-card .day-temps {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.forecast-card .day-rain {
+  font-size: 0.7rem;
+  color: #483DAD;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.75rem;
+  color: #333333;
+  opacity: 0.7;
+}
+
+.forecast-card {
+  border: 2px solid #483DAD;
+  background-color: #F4F3FF;
+}
